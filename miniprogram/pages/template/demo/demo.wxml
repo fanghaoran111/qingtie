@@ -1,0 +1,64 @@
+<view class="container container-fill">
+	<view class="scroll-fullpage"  style="transform:translateY(-{{scrollindex*100}}%);margin-top: {{margintop}}px">
+		<view bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend" class="section section01 {{scrollindex==0?'active':''}}">
+      <view class='section-s'>
+        <image class='section-1' src='https://fanghaoran.xyz/images/bulao.png'></image>
+        <image class='section-1' src='https://fanghaoran.xyz/images/busan.png'></image>
+        <text class='section-maintitle'>"我们永远是同学!"</text>
+        <text class='section-maintitle'>无论集结号是否吹响，</text>
+        <text class='section-maintitle'>友情这个阵地我们会永远坚守！</text>
+      </view>
+		</view>
+
+		<view class="section section02 {{scrollindex==1?'active':''}}">
+        <view class='section-s'>
+        <view bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend" class='section-b' >
+            <image class='section-i' src='https://fanghaoran.xyz/images/bulao.png'></image>
+            <image class='section-i' src='https://fanghaoran.xyz/images/busan.png'></image>
+            <text class='section-maintitle sec'>致老同学</text>
+          </view>
+          <image class='section-2' catchtap='changeBigImg' src='{{bigImg}}'></image>
+        </view>
+         
+		</view>
+
+		<view class="section section03 {{scrollindex==2?'active':''}}">
+      <view class='section-s'>
+      <view bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend" class='section-b' >
+        <image class='section-i' src='https://fanghaoran.xyz/images/bulao.png'></image>
+        <image class='section-i' src='https://fanghaoran.xyz/images/busan.png'></image>
+        <text class='section-maintitle sec'>往期照片</text>
+        </view>
+        <view class='section-n'>
+          <image class='section-3' bindtap='changeaImg' src='{{aImg}}'></image>
+          <image class='section-3' bindtap='changebImg' src='{{bImg}}'></image>
+          <image class='section-4' bindtap='changecImg' src='{{cImg}}'></image>
+          <image class='section-4' bindtap='changedImg' src='{{dImg}}'></image>
+        </view>
+      </view>
+		</view>
+
+		<view class="section section04 {{scrollindex==3?'active':''}}">
+      <view bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend" class='section-s'>
+        <image class='section-i' src='https://fanghaoran.xyz/images/bulao.png'></image>
+        <image class='section-i' src='https://fanghaoran.xyz/images/busan.png'></image>
+        <text class='section-maintitle sec'>聚会地点</text>
+        <map class='map'></map>
+    
+          <view wx:for="{{ne}}" wx:key wx:if="{{index<1}}"> 
+            <text class='addTime'>地址：{{item.add}}</text>
+            <text class='addTime'>邀请人:{{item.username}}</text>
+            <text class='addTime'>电话: {{item.phone}}</text>
+            <text class='addTime'>时间：{{item.date}}</text>
+          </view>
+        <view>
+        </view>
+      </view>
+		</view>
+
+	</view>
+
+</view>
+
+    <button class='bbb' open-type='share'>分享</button>
+
