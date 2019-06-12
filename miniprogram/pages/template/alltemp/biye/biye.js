@@ -66,6 +66,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 导航切换方法
   selected: function (e) {
     console.log(e)
     let that = this

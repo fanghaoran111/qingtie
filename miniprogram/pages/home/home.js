@@ -1,7 +1,6 @@
 //home.js
 //获取应用实例
 const app = getApp()
-
 Page({
   data: {
     userInfo: {},
@@ -9,6 +8,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     openid:''
   },
+  // 拨打电话方法
   call: function () {
     wx.makePhoneCall({
       phoneNumber: '18838091273',
@@ -20,7 +20,6 @@ Page({
       }
     })
   },
-
   //事件处理函数
   // 引用logs获取用户头像信息
   bindViewTap: function () {

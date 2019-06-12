@@ -11,6 +11,16 @@
               <text class='tem_n'>全部></text>
             </navigator>
             <view class='hunli'>
+            <view class='hunli_1'>
+                    <navigator url='./demo/demo'>
+                      <image src='https://fanghaoran.xyz/images/6.jpg'></image>
+                    </navigator>
+                    <view class='tem_2'>
+                      <text>毕业季</text>
+                      <image class='img' src="https://fanghaoran.xyz/images/moban/yan.png"></image>
+                      <text class='text'>1110</text>
+                    </view>
+                </view>
               <block wx:for="{{array}}" wx:for-item="array">
                 <view class='hunli_1' catchtap='listCatch' data-id="{{index}}">
                     <image src='{{array.img}}'></image>

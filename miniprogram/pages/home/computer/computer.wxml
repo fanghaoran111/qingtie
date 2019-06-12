@@ -1,10 +1,11 @@
 <!--pages/home/computer/computer.wxml-->
 <view class="nav_title">
       <view class="nav_tab">
-      <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected">{{item}}
-      <view class="{{selected==index?'nav_underline':''}}"></view>
+          <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected">{{item}}
+              <view class="{{selected==index?'nav_underline':''}}"></view>
+          </view>
       </view>
-      </view>
+
       <view class='flex-wrap' wx:if="{{selected == 0}}">
         <view data-index="0" bindtap='changeToggle'>
           <view class='flex-item'>*如何登录到小程序</view>

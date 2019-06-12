@@ -13,7 +13,8 @@
     "pages/moban/moban",
     "pages/home/per/per",
     "pages/home/per/map/map",
-    "pages/template/demo/demo"
+    "pages/template/demo/demo",
+    "pages/template/demo2/demo2"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -53,5 +54,6 @@
     "scope.userLocation": {
       "desc": "你的位置信息将用于小程序位置接口的效果展示"
     }
-  }
+  },
+  "requiredBackgroundModes": ["audio"]
 }

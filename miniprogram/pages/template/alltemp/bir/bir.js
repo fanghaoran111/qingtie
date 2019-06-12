@@ -1,6 +1,5 @@
 // pages/template/alltemp/bir/bir.js
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -8,7 +7,6 @@ Page({
     selected: 0,
     list: ['成人生日', '宝宝生日', '老人生日']
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -66,6 +64,7 @@ Page({
   onShareAppMessage: function () {
 
   },
+  // 导航切换方法
   selected: function (e) {
     console.log(e)
     let that = this

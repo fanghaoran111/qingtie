@@ -1,18 +1,15 @@
 // pages/moban/moban.js
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
     url:''
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-   
     var that = this
     console.log(options)//打印数据
     // 获取传过来的数据
@@ -34,16 +31,13 @@ Page({
       })
     }
   },
- 
-
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
-
+  
   /**
    * 生命周期函数--监听页面显示
    */

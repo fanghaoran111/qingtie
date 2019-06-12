@@ -9,11 +9,11 @@
       <view class='flex-wrap' wx:if="{{selected == 0}}">
     
         <view class='flex-item'>
-          <navigator url='../../demo/demo'>
-          <image class='img' src='https://fanghaoran.xyz/images/moban/1.jpg'></image>
-          </navigator>
+         <navigator url='../../demo2/demo2'>
+          <image class='img' src='https://fanghaoran.xyz/images/hunli.jpg'></image>
+        </navigator>
           <view class='item'>
-            <text class='text1'>卡通森林</text>
+            <text class='text1'>我们结婚了</text>
             <image class='img1' src="https://fanghaoran.xyz/images/moban/yan.png"></image>
             <text class='text'>1110</text>
           </view>
@@ -58,13 +58,6 @@
             <text class='text'>1110</text>
           </view>
         </view>
-        <view class='flex-item'>
-          <image class='img' src='https://fanghaoran.xyz/images/moban/6.jpg'></image>
-          <view class='item'>
-            <text class='text1'>粉蓝清新</text>
-            <image class='img1' src="https://fanghaoran.xyz/images/moban/yan.png"></image>
-            <text class='text'>1110</text>
-          </view>
-        </view>
+       
       </view>
 </view> 

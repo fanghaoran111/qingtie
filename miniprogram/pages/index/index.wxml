@@ -67,15 +67,25 @@
             <view class='hunli'>
             <view class='hunli_1'>
                     <navigator url='../template/demo/demo'>
-                      <image src='https://fanghaoran.xyz/images/moban/6.jpg' ></image>
+                      <image src='https://fanghaoran.xyz/images/6.jpg' ></image>
                     </navigator>
                     <view class='tem_2'>
-                      <text>粉蓝清新</text>
+                      <text>毕业季</text>
                       <image class='img' src="https://fanghaoran.xyz/images/moban/yan.png"></image>
                       <text class='text'>1110</text>
                     </view>
-                </view>
-             <block wx:for="{{items}}" wx:for-item="item">
+            </view>
+             <view class='hunli_1'>
+                    <navigator url='../template/demo2/demo2'>
+                      <image src='https://fanghaoran.xyz/images/hunli.jpg' ></image>
+                    </navigator>
+                    <view class='tem_2'>
+                      <text>我们结婚了</text>
+                      <image class='img' src="https://fanghaoran.xyz/images/moban/yan.png"></image>
+                      <text class='text'>1110</text>
+                    </view>
+            </view>
+             <block wx:for="{{items}}" wx:key="key" wx:for-item="item">
                 <view class='hunli_1' catchtap='onDetailTap' data-id="{{index}}">
                     <image src='{{item.img}}'></image>
                     <view class='tem_2'>
@@ -95,7 +105,7 @@
             </navigator>
             <view class='hunli'>
               <block wx:for="{{array}}" wx:for-item="array">
-                <view class='hunli_1' catchtap='capTach' data-id="{{index}}" >
+                <view class='hunli_1' data-id="{{index}}" >
                     <image src='{{array.img}}'></image>
                     <view class='tem_2'>
                       <text>{{array.title}}</text>
@@ -114,7 +124,7 @@
             </navigator>
             <view class='hunli'>
               <block wx:for="{{list}}" wx:for-item="list">
-                <view class='hunli_1' catchtap='listCatch' data-id="{{index}}">
+                <view class='hunli_1'data-id="{{index}}">
                     <image src='{{list.img}}'></image>
                     <view class='tem_2'>
                       <text>{{list.title}}</text>

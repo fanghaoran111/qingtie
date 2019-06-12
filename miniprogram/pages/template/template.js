@@ -6,24 +6,24 @@ Page({
    */
   data: {
     array: [{
-      title: '手绘风格',
-      img: 'https://fanghaoran.xyz/images/moban/9.jpg',
+      title: '毕业季',
+      img: 'https://fanghaoran.xyz/images/moban/1.jpg',
       url:'https://fanghaoran.xyz/moban/',
       imgs: 'https://fanghaoran.xyz/images/moban/yan.png'
     }, {
-        title: '毕业季',
+        title: '卡通森林',
       img: 'https://fanghaoran.xyz/images/moban/13.jpg',
-        url:'https://fanghaoran.xyz/moban/marry1',
+        url:'https://fanghaoran.xyz/moban/marry2',
       imgs: 'https://fanghaoran.xyz/images/moban/yan.png'
     }, {
       title: '粉色轻奢',
       img: 'https://fanghaoran.xyz/images/moban/3.jpg',
-        url: 'https://fanghaoran.xyz/moban/marry2',
+        url: 'https://fanghaoran.xyz/moban/marry3',
       imgs: 'https://fanghaoran.xyz/images/moban/yan.png'
     }, {
         title: '生日祝福',
       img: 'https://fanghaoran.xyz/images/moban/11.jpg',
-        url: 'https://fanghaoran.xyz/moban/marry3',
+        url: 'https://fanghaoran.xyz/moban/marry2',
       imgs: 'https://fanghaoran.xyz/images/moban/yan.png'
     }, {
       title: '浪漫韩式',
@@ -92,13 +92,12 @@ Page({
         imgs: 'https://fanghaoran.xyz/images/moban/yan.png'
       }, {
         title: '粉蓝清新',
-        img: 'https://fanghaoran.xyz/images/moban/6.jpg',
+        img: 'https://fanghaoran.xyz/images/moban/9.jpg',
         url: '',
         imgs: 'https://fanghaoran.xyz/images/moban/yan.png'
       }
     ]
   },
-  
 
   /**
    * 生命周期函数--监听页面加载

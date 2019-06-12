@@ -1,7 +1,6 @@
 //index.js
 // 背景音乐外部接口
 var musicUrl = 'http://www.ytmp3.cn/down/34436.mp3'
-// const db = wx.cloud.database();
 Page({
   data: {
     autoplay: true,
@@ -32,12 +31,6 @@ Page({
        title: '清新森林',
        url: 'https://fanghaoran.xyz/moban/marry3/',
        img: 'https://fanghaoran.xyz/images/moban/4.jpg',
-       imgs: 'https://fanghaoran.xyz/images/moban/yan.png'
-     }, {
-       id: '5',
-       title: '浪漫韩式',
-       url: '',
-       img: 'https://fanghaoran.xyz/images/moban/5.jpg',
        imgs: 'https://fanghaoran.xyz/images/moban/yan.png'
      }
    ],
@@ -127,11 +120,9 @@ Page({
     var that = this
     wx.playBackgroundAudio({
       dataUrl: musicUrl,
-      title: '',
+      title: '一次就好',
       coverImgUrl: ''
     })
-      // that.saveUser(),
-      // that.downLoadHomeImgs()
   },
   // 播放方法
   play: function (event) {
@@ -152,7 +143,7 @@ Page({
       })
     }
   },
-  //点击事件
+  //点击携带id值跳转到链接外部页面
   onDetailTap: function (e) {
     var that = this
     // console.log(e)//打印数据
@@ -163,24 +154,5 @@ Page({
       url: '/pages/moban/moban?url=' + that.data.items[id].url,//传url参数到跳转新页面
     })
   },
-  capTach: function (e) {
-    var that = this
-    // console.log(e)//打印数据
-    console.log(e.currentTarget.dataset.id)//打印数据
-    var id = e.currentTarget.dataset.id
-    console.log(that.data.list)
-    wx.navigateTo({
-      url: '/pages/moban/moban?url=' + that.data.array[id].url,//传url参数到跳转新页面
-    })
-  },
-  listCatch: function (e) {
-    var that = this
-    // console.log(e)//打印数据
-    console.log(e.currentTarget.dataset.id)//打印数据
-    var id = e.currentTarget.dataset.id
-    console.log(that.data.list)
-    wx.navigateTo({
-      url: '/pages/moban/moban?url=' + that.data.list[id].url,//传url参数到跳转新页面
-    })
-  },
+
 })

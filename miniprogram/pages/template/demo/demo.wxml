@@ -1,3 +1,8 @@
+<!-- 音乐播放 -->
+<view class='music {{on? "on": ""}}'>
+    <image src='../../images/music.png' style='width: 80rpx;height: 80rpx;' bindtap='stop'></image>
+</view>
+<!-- 模板页面 -->
 <view class="container container-fill">
 	<view class="scroll-fullpage"  style="transform:translateY(-{{scrollindex*100}}%);margin-top: {{margintop}}px">
 		<view bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend" class="section section01 {{scrollindex==0?'active':''}}">

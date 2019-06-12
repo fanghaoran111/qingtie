@@ -1,11 +1,11 @@
 <!--pages/template/alltemp/bir/bir.wxml-->
 <view class="nav_title">
-
-      <view class="nav_tab">
+    <!-- 导航切换 -->
+    <view class="nav_tab">
       <view wx:for="{{list}}" class="{{selected==index?'hidden':'show'}}" data-index='{{index}}' bindtap="selected">{{item}}
-      <view class="{{selected==index?'nav_underline':''}}"></view>
+        <view class="{{selected==index?'nav_underline':''}}"></view>
       </view>
-      </view>
+    </view>
       <!-- tab框显示内容 -->
       <view class='flex-wrap' wx:if="{{selected == 0}}">
         <view class='flex-item'>

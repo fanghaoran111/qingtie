@@ -8,6 +8,7 @@ Page({
     critical: 1, //触发翻页的临界值
     margintop: 0,  //滑动下拉距离
     ne:[],
+    on: true,   // 控制音乐的状态，以及图标是否旋转
     bigImg: 'https://fanghaoran.xyz/images/sek.jpg',//默认图片，设置为空也可以
     uImg: 'https://fanghaoran.xyz/images/sek.jpg',
     aImg: 'https://fanghaoran.xyz/images/sek.jpg',
@@ -17,15 +18,13 @@ Page({
   },
   onLoad: function () {
     var _this = this;
-    // const _ =  db.command
     //1、引用数据库   
     const db = wx.cloud.database()
     //2、开始查询数据了  user对应的是集合的名称   
     db.collection('user').where({
+      // 根据openid条件获取数据
       _openid: this.openid
-
     }).orderBy('_id', 'desc').get({
-
       //如果查询成功的话    
       success: res => {
         console.log(res.data)
@@ -43,10 +42,28 @@ Page({
   onShareAppMessage: function (res) {
     return {
       title: '青春不老，我们不散',
-      imageUrl:['bigImg','uImg','aImg','bImg','cImg','dImg']
+      desc:'',
+      imageUrl:''
     }
   },
-
+  // 放在onReady函数中，使在进入页面后，音乐就自动开始
+  onReady() {
+    // 获取BackgroundAudioManager 实例
+    this.back = wx.getBackgroundAudioManager()
+    // 对实例进行设置
+    this.back.src = "http://win.web.re01.sycdn.kuwo.cn/dc6cd4bc6772ba0bf469452558bb7361/5cff679d/resource/n1/71/48/1598613623.mp3"
+    this.back.title = '同桌的你'   // 标题为必选项
+    this.back.play()               // 开始播放
+  },
+  stop:function() {
+    this.back.pause(); // 点击音乐图标后出发的操作
+    this.setData({ on: !this.data.on })
+    if (this.data.on) {
+      this.back.play()
+    } else {
+      this.back.pause()
+    }
+  },
   // 手指触摸
   scrollTouchstart: function (e) {
     let py = e.touches[0].pageY;
@@ -85,13 +102,6 @@ Page({
       margintop: 0
     })
   },
- 
-
-
-
-
-
-
   // 上传图片
   changeBigImg:function() {
     let that = this;
@@ -126,14 +136,14 @@ Page({
                 wx.showToast({
                   title: '图片存储成功',
                   'icon': 'none',
-                  duration: 3000
+                  duration: 9000
                 })
               },
               fail: function () {
                 wx.showToast({
                   title: '图片存储失败',
                   'icon': 'none',
-                  duration: 3000
+                  duration: 9000
                 })
               }
             });

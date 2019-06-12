@@ -5,7 +5,6 @@ var today = common.getToday();
 // 引入SDK核心类
 var QQMapWX = require('../../libs/qqmap-wx-jssdk.min.js');
 var qqmapsdk;
-
 Page({
   /**
    * 页面的初始数据
@@ -27,7 +26,7 @@ Page({
   },
   onLoad: function (options) {
     /*判断是第一次加载还是从position页面返回
-  如果从position页面返回，会传递用户选择的地点*/
+    如果从position页面返回，会传递用户选择的地点*/
     if (options.address != null && options.address != '') {
       //设置变量 address 的值
       this.setData({
@@ -47,27 +46,22 @@ Page({
             address: res.result.address
           });
         },
-
         fail: function (res) {
           // console.log("调起失败")
         },
-
         complete: function (res) {
           //console.log(res);
         }
       })
     };
-
+    // 数据库操作
     var _this = this;
-    // const _ =  db.command
     //1、引用数据库   
     const db = wx.cloud.database()
     //2、开始查询数据了  user对应的是集合的名称   
     db.collection('user').where({
-      _openid: this.openid
-      
-    }).orderBy('_id','desc').get({
-
+       _openid:_this.data.openid
+      }).orderBy('_id','desc').get({
       //如果查询成功的话    
       success: res => {
         console.log(res.data)
@@ -84,22 +78,16 @@ Page({
           url: 'https://30paotui.com/user/wechat',
           data: {
             appid: 'wx4f94d2460072f16a',
-            secret: 'e4fb468bce13d3791d1ecc7e7c461033',
+            secret: 'e4fb468bce13d3791d1ecc7e7c461033', //小程序密钥
             code: res.code
           }, success: function (response) {
             var openid = response.data.openid;
-            console.log('请求获取openid:' + openid);      //可以把openid存到本地，方便以后调用
+            console.log('获取到的openid:' + openid);      //可以把openid存到本地，方便以后调用
             wx.setStorageSync('openid', openid);
-            that.setData({
-              openid: "获取到的openid：" + openid
-            })
           }
         })
       }
     })
-
-
-
   },
   // 地图跳转获取的方法
   onChangeAddress: function (e) {
@@ -107,7 +95,7 @@ Page({
       url: "/pages/home/per/map/map"
     });
   },
-  // 返回图片的方法
+  // "返回"图片的方法
   Onnav:function() {
     wx.switchTab({
       url: "/pages/home/home"
@@ -118,6 +106,7 @@ Page({
     const db = wx.cloud.database()
     db.collection('user').add({
       data: {
+        // 获取页面内需要上传的数据的value值
         username: e.detail.value.username,
         phone: e.detail.value.phone,
         name1: e.detail.value.name1,
@@ -127,6 +116,7 @@ Page({
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
         this.setData({
+          // 返回页面内需要上传的数据进行存储
           username: e.detail.value.username,
           phone: e.detail.value.phone,
           name1: e.detail.value.name1,
@@ -158,10 +148,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
-      
     
-  },
+
+  }, 
   
 
 

@@ -175,3 +175,21 @@ page{
 		margin-top: 70rpx;
 	}
 }
+.music{
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+  position: fixed;
+  top: 40rpx;
+  right: 40rpx;
+  z-index: 9999;
+}
+.on{
+  animation:rotating 2.5s linear infinite;
+}   
+
+@keyframes rotating{
+from{transform:rotate(0)}
+to{transform:rotate(360deg)}
+}
+

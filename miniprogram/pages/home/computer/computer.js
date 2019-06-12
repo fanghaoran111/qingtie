@@ -27,10 +27,10 @@ Page({
   
   changeToggle: function (e) {
     var index = e.currentTarget.dataset.index;
-    if (this.data.selectedFlag[index]) {
-      this.data.selectedFlag[index] = false;
-    } else {
-      this.data.selectedFlag[index] = true;
+      if (this.data.selectedFlag[index]) {
+          this.data.selectedFlag[index] = false;
+      } else {
+          this.data.selectedFlag[index] = true;
     }
 
     this.setData({

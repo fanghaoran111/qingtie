@@ -1,0 +1,91 @@
+<!-- 音乐播放 -->
+<view class='music {{on? "on": ""}}'>
+    <image src='../../images/yinyue1.png' style='width: 80rpx;height: 80rpx;' bindtap='stop'></image>
+</view>
+<view class="container container-fill">
+
+	<view class="scroll-fullpage"  style="transform:translateY(-{{scrollindex*100}}%);margin-top: {{margintop}}px">
+		<view class="section section01 topb {{scrollindex==0?'active':''}}" >
+		   <view bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend">
+				<text class="section-maintitle">
+					我们结婚了
+				</text>
+				<text class="section-subtitle" style="color:#000;">
+					一生一世的情
+				</text>
+			</view>
+			<view class="dd">
+				<view class="top1">
+		        <image catchtap='changecImg' src='{{cImg}}'>
+			    </image>
+		   </view>
+		   <view class="top2">
+		        <image catchtap='changedImg' src='{{dImg}}'>
+		        </image>
+		   </view>
+		   <view class="top3">
+		        <image catchtap='changeeImg' src='{{eImg}}'>
+		        </image>
+		   </view>
+		   <view class="top4">
+		        <image catchtap='changefImg' src='{{fImg}}'>
+		        </image>
+		   </view>
+			</view>
+		</view>
+		<view class="section section02 topc {{scrollindex==1?'active':''}}">
+		 <view bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend">
+			<text class="section-maintitle">
+			     生生世世
+			</text>
+			<text class="section-subtitle">
+			     此情惟你独钟
+			</text>
+			</view>
+			<view class="lop1">
+		        <image catchtap='changegImg' src='{{gImg}}'>
+				</image>
+		   </view>
+		</view>
+		<view class="section section03 topd {{scrollindex==2?'active':''}}" 
+>
+			<view bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend">
+			<text class="section-maintitle">
+		     	我愿意用生命中的
+			</text>
+			<text class="section-subtitle" 
+			style="color:#FF0052;">
+		      	每一分每一秒陪着你
+			</text>
+			</view>
+			<view>
+		  <view class="mop1">
+		       <image catchtap='changehImg' src='{{hImg}}'>
+		       </image>
+		  </view>
+	    </view>
+		</view>
+		<view class="section section04 tope {{scrollindex==3?'active':''}}" >
+		<view bindtouchstart="scrollTouchstart" bindtouchmove="scrollTouchmove" bindtouchend="scrollTouchend">
+			<text class="bbb">
+			     我会让我的爱
+			</text>
+			<text class="aaa">
+			     陪你慢慢的老去
+			</text>
+		  </view>
+			<view>
+		   <view class="top11">
+		        <image catchtap='changeaImg' src='{{aImg}}'>
+		        </image>
+		   </view>
+		   <view class="top12">
+		        <image catchtap='changebImg' src='{{bImg}}'>
+		        </image>
+		   </view>
+		   </view>
+		</view>
+		
+	</view>
+</view>
+    <button class='bbb' open-type='share'>分享</button>
